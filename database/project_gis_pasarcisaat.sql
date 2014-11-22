@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.4
+-- version 4.0.9
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jul 19, 2014 at 06:15 
--- Server version: 5.5.31
--- PHP Version: 5.4.16
+-- Generation Time: Nov 22, 2014 at 11:45 
+-- Server version: 5.6.14
+-- PHP Version: 5.5.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,8 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `project_gis_pasarcisaat`
 --
-CREATE DATABASE IF NOT EXISTS `project_gis_pasarcisaat` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `project_gis_pasarcisaat`;
 
 -- --------------------------------------------------------
 
@@ -56,7 +54,7 @@ CREATE TABLE IF NOT EXISTS `admin` (
 --
 
 INSERT INTO `admin` (`id`, `nama`, `tempat`, `tanggal`, `alamat`, `pekerjaan`, `foto`, `hubungan`, `hobi`, `email`, `jabatan`, `hp`, `agama`, `pendidikan`, `username`, `passs`, `password`, `level`, `status`) VALUES
-(1, 'Fathan Rohman', 'Sukabumi', '2014-06-04', 'Sukabumi, Bhayangkara', 'SEO Manager', 'dddsds', 'Lajang', 'Browsing', 'doctor.fathan@gmail.com', 'Administrator', '085720247282', 'Islam', 'S1 Teknik Informatika UMMI', 'admin', 'admin', 'admin', '1', '1');
+(1, 'Dede Sulaeman', 'Sukabumi', '2014-06-04', 'Sukabumi, Bhayangkara', '', '', '', '', '', 'Administrator', '', 'Islam', 'S1 Teknik Informatika UMMI', 'admin', 'admin', 'admin', '1', '1');
 
 -- --------------------------------------------------------
 
@@ -123,7 +121,7 @@ CREATE TABLE IF NOT EXISTS `image_maps` (
   `coords` varchar(250) NOT NULL,
   `status` varchar(250) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=841 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=840 ;
 
 --
 -- Dumping data for table `image_maps`
@@ -364,7 +362,7 @@ INSERT INTO `image_maps` (`id`, `id_blok`, `alt`, `coords`, `status`) VALUES
 (247, 'KA-10', 'KA-10', '434,611,460,629', '1'),
 (248, 'KA-11', 'KA-11', '453,611,479,629', '1'),
 (249, 'KA-12', 'KA-12', '476,610,502,628', '1'),
-(250, '', 'KA-13', '502,611,528,629', '1'),
+(250, 'KA-13', 'KA-13', '502,611,528,629', '1'),
 (251, 'KA-14', 'KA-14', '527,611,553,629', '1'),
 (252, 'KA-15', 'KA-15', '547,610,573,628', '1'),
 (253, 'KA-16', 'KA-16', '570,610,596,628', '1'),
@@ -952,8 +950,7 @@ INSERT INTO `image_maps` (`id`, `id_blok`, `alt`, `coords`, `status`) VALUES
 (836, 'LD-88', 'LD-88', '671,327,687,339', '1'),
 (837, 'LD-89', 'LD-89', '658,328,674,340', '1'),
 (838, 'LD-90', 'LD-90', '642,328,658,340', '1'),
-(839, 'TOILET 4', 'TOILET 4', '864,128,914,169', '1'),
-(840, 'KETERANGAN', 'KETERANGAn', '157,3,798,121', '1');
+(839, 'TOILET 4', 'TOILET 4', '864,128,914,169', '1');
 
 -- --------------------------------------------------------
 
@@ -1033,7 +1030,7 @@ CREATE TABLE IF NOT EXISTS `keterangan_harga_sembako` (
 --
 
 INSERT INTO `keterangan_harga_sembako` (`id_keterangan`, `judul`, `minggu`, `bulan`, `tahun`, `kepala_uptd`, `nip_kepala_uptd`, `pencatat_harga`, `nip_pencatat_harga`) VALUES
-(1, 'LAPORAN HARGA DAN PERSEDIAAN KEBUTUHAN POKOK MASYARAKAT PADA UPTD PASAR CISAAT ', 'VII', 'JULI', '2014', 'Prof. Dr. Eng. memet, M.T', '198004232008011004	', 'Dede Sulaeman, S.T', '198301202006041005');
+(1, 'LAPORAN HARGA DAN PERSEDIAAN KEBUTUHAN POKOK MASYARAKAT PADA UPTD PASAR MODERN CISAAT', 'VII', 'JULI', '2014', 'Prof. Dr. Eng. momot, M.T', '198004232008011004	', 'Dede Sulaeman, M.T', '198301202006041005');
 
 -- --------------------------------------------------------
 
@@ -1056,17 +1053,16 @@ CREATE TABLE IF NOT EXISTS `kios` (
   `status_kepemilikan` varchar(100) NOT NULL,
   `no_shgp` varchar(100) NOT NULL,
   `foto` text NOT NULL,
+  `status` varchar(10) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
 
 --
 -- Dumping data for table `kios`
 --
 
-INSERT INTO `kios` (`id`, `id_blok`, `no_blok`, `nama`, `tempat`, `tanggal`, `alamat`, `pekerjaan`, `jenis_komoditas`, `type`, `ukuran`, `status_kepemilikan`, `no_shgp`, `foto`) VALUES
-(7, 'KI-1', '3A', 'Fathan Rohman, S.T', 'Sukabumi', '2014-06-27', 'Jalan Bhayangkara kelurahan Sriwidari Kecamatan Gunung Puyuh Kota Sukabumi, Jawa barat, indonesia Raya', 'Project manager', 'Bank', 'KIOS', '4 x 3,5', 'Cicilan', '11324253566565644t', '../gambar_kios/meyda-sefira.jpg'),
-(8, 'LB-90', '2C', 'Dede Sulaeman, S.T', 'Sukabumi', '2014-07-19', 'Sukabumi', 'Pedagang', 'Sayuran', '2 x 3,3', 'KIOS', 'Cicilan', '5112.4/AK/4087/GJ', '../gambar_kios/Screenshot from 2014-07-13 21:21:34.png'),
-(9, 'KJ-1', '2B', 'Dede', 'sukani;', '2014-07-10', 'xcvbnm,', 'wer', 'Cue', '2 x 1,9', 'GUKI', 'Kontrak', '1234567890-', '../gambar_kios/meyda-sefira.jpg');
+INSERT INTO `kios` (`id`, `id_blok`, `no_blok`, `nama`, `tempat`, `tanggal`, `alamat`, `pekerjaan`, `jenis_komoditas`, `type`, `ukuran`, `status_kepemilikan`, `no_shgp`, `foto`, `status`) VALUES
+(13, 'KJ-10', 'dsds', 'fsff', 'sdsd', '2014-08-12', 'dsds', 'sf', 'Daging kambing', '2 x 2,5', 'LOS', 'Cicilan', '434344', '../gambar_kios/user.jpg', 'ADA');
 
 -- --------------------------------------------------------
 
@@ -1083,15 +1079,14 @@ CREATE TABLE IF NOT EXISTS `komentar` (
   `date` datetime NOT NULL,
   `status` varchar(10) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `komentar`
 --
 
 INSERT INTO `komentar` (`id`, `id_topik`, `topik`, `nama`, `isi`, `date`, `status`) VALUES
-(1, 0, 'Berita', 'Fathan Rohman', 'sasa', '2014-07-15 06:46:46', '1'),
-(2, 0, 'Berita', 'Dede', 'cek', '2014-07-18 08:34:59', '1');
+(3, 0, 'Berita', 'dede', 'tes komentar', '2014-08-12 09:31:51', '1');
 
 -- --------------------------------------------------------
 
@@ -1124,16 +1119,16 @@ CREATE TABLE IF NOT EXISTS `profil` (
   `isi` text NOT NULL,
   `status` varchar(10) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `profil`
 --
 
 INSERT INTO `profil` (`id`, `judul`, `anchor`, `date`, `kategori`, `isi`, `status`) VALUES
-(1, 'Sejarah', 'Administrator', '2014-06-06 04:09:56', 'Profil', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, molestias, nam, molestiae, nihil animi voluptate quam iste adipisci repellat a facere aliquid reprehenderit corporis labore eligendi rem quibusdam tempore repudiandae!&nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, molestias, nam, molestiae, nihil animi voluptate quam iste adipisci repellat a facere aliquid reprehenderit corporis labore eligendi rem quibusdam tempore repudiandae!&nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, molestias, nam, molestiae, nihil animi voluptate quam iste adipisci repellat a facere aliquid reprehenderit corporis labore eligendi rem quibusdam tempore repudiandae!</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, molestias, nam, molestiae, nihil animi voluptate quam iste adipisci repellat a facere aliquid reprehenderit corporis labore eligendi rem quibusdam tempore repudiandae!&nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, molestias, nam, molestiae, nihil animi voluptate quam iste adipisci repellat a facere aliquid reprehenderit corporis labore eligendi rem quibusdam tempore repudiandae!&nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, molestias, nam, molestiae, nihil animi voluptate quam iste adipisci repellat a facere aliquid reprehenderit corporis labore eligendi rem quibusdam tempore repudiandae!</p>\r\n\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, molestias, nam, molestiae, nihil animi voluptate quam iste adipisci repellat a facere aliquid reprehenderit corporis labore eligendi rem quibusdam tempore repudiandae!&nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, molestias, nam, molestiae, nihil animi voluptate quam iste adipisci repellat a facere aliquid reprehenderit corporis labore eligendi rem quibusdam tempore repudiandae!&nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, molestias, nam, molestiae, nihil animi voluptate quam iste adipisci repellat a facere aliquid reprehenderit corporis labore eligendi rem quibusdam tempore repudiandae!</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, molestias, nam, molestiae, nihil animi voluptate quam iste adipisci repellat a facere aliquid reprehenderit corporis labore eligendi rem quibusdam tempore repudiandae!&nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, molestias, nam, molestiae, nihil animi voluptate quam iste adipisci repellat a facere aliquid reprehenderit corporis labore eligendi rem quibusdam tempore repudiandae!&nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, molestias, nam, molestiae, nihil animi voluptate quam iste adipisci repellat a facere aliquid reprehenderit corporis labore eligendi rem quibusdam tempore repudiandae!</p>\r\n', '1'),
 (2, 'Visi dan Misi', 'Administrator', '2014-06-06 04:10:33', 'Profil', '<p><strong>Visi</strong></p>\r\n\r\n<p><em style="line-height:1.6em; text-align:justify">Menjadikan andalan dalam menopang pendapatan asli daerah untuk mewujudkan kemandirian kabupaten Sukabumi dengan dukungan sumberdaya manusia yang ahklakul karimah.</em></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>Misi</strong></p>\r\n\r\n<ol>\r\n	<li>\r\n	<p><em>Mengembangkan perekonomian masyarakat melalui asa pelayanan pasar serta mengembangkan ekonomi dan keuangan yang berlandaskan syari&rsquo;ah</em></p>\r\n	</li>\r\n	<li>\r\n	<p><em>Meningkatkan peran serta masyarakaat dalam pendapatan daerah.</em></p>\r\n	</li>\r\n	<li>\r\n	<p><em>Meningkatkan profesionalisme dalam meningkatkan pelayan prima kepada masyarakat.</em></p>\r\n	</li>\r\n	<li>\r\n	<p><em>Mampu bersaing secara kompetitif sebagai perusahaan daerah yang potensial.</em></p>\r\n	</li>\r\n</ol>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p style="margin-left: 0.75in; text-align: justify;">&nbsp;</p>\r\n', '1'),
-(3, 'Organigram', 'Administrator', '2014-06-06 04:10:43', 'Profil', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, molestias, nam, molestiae, nihil animi voluptate quam iste adipisci repellat a facere aliquid reprehenderit corporis labore eligendi rem quibusdam tempore repudiandae!&nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, molestias, nam, molestiae, nihil animi voluptate quam iste adipisci repellat a facere aliquid reprehenderit corporis labore eligendi rem quibusdam tempore repudiandae!&nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, molestias, nam, molestiae, nihil animi voluptate quam iste adipisci repellat a facere aliquid reprehenderit corporis labore eligendi rem quibusdam tempore repudiandae!</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, molestias, nam, molestiae, nihil animi voluptate quam iste adipisci repellat a facere aliquid reprehenderit corporis labore eligendi rem quibusdam tempore repudiandae!&nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, molestias, nam, molestiae, nihil animi voluptate quam iste adipisci repellat a facere aliquid reprehenderit corporis labore eligendi rem quibusdam tempore repudiandae!&nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, molestias, nam, molestiae, nihil animi voluptate quam iste adipisci repellat a facere aliquid reprehenderit corporis labore eligendi rem quibusdam tempore repudiandae!</p>\r\n\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, molestias, nam, molestiae, nihil animi voluptate quam iste adipisci repellat a facere aliquid reprehenderit corporis labore eligendi rem quibusdam tempore repudiandae!&nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, molestias, nam, molestiae, nihil animi voluptate quam iste adipisci repellat a facere aliquid reprehenderit corporis labore eligendi rem quibusdam tempore repudiandae!&nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, molestias, nam, molestiae, nihil animi voluptate quam iste adipisci repellat a facere aliquid reprehenderit corporis labore eligendi rem quibusdam tempore repudiandae!</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, molestias, nam, molestiae, nihil animi voluptate quam iste adipisci repellat a facere aliquid reprehenderit corporis labore eligendi rem quibusdam tempore repudiandae!&nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, molestias, nam, molestiae, nihil animi voluptate quam iste adipisci repellat a facere aliquid reprehenderit corporis labore eligendi rem quibusdam tempore repudiandae!&nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, molestias, nam, molestiae, nihil animi voluptate quam iste adipisci repellat a facere aliquid reprehenderit corporis labore eligendi rem quibusdam tempore repudiandae!</p>\r\n', '1');
+(3, 'Organigram', 'Administrator', '2014-06-06 04:10:43', 'Profil', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, molestias, nam, molestiae, nihil animi voluptate quam iste adipisci repellat a facere aliquid reprehenderit corporis labore eligendi rem quibusdam tempore repudiandae!&nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, molestias, nam, molestiae, nihil animi voluptate quam iste adipisci repellat a facere aliquid reprehenderit corporis labore eligendi rem quibusdam tempore repudiandae!&nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, molestias, nam, molestiae, nihil animi voluptate quam iste adipisci repellat a facere aliquid reprehenderit corporis labore eligendi rem quibusdam tempore repudiandae!</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, molestias, nam, molestiae, nihil animi voluptate quam iste adipisci repellat a facere aliquid reprehenderit corporis labore eligendi rem quibusdam tempore repudiandae!&nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, molestias, nam, molestiae, nihil animi voluptate quam iste adipisci repellat a facere aliquid reprehenderit corporis labore eligendi rem quibusdam tempore repudiandae!&nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, molestias, nam, molestiae, nihil animi voluptate quam iste adipisci repellat a facere aliquid reprehenderit corporis labore eligendi rem quibusdam tempore repudiandae!</p>\r\n\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, molestias, nam, molestiae, nihil animi voluptate quam iste adipisci repellat a facere aliquid reprehenderit corporis labore eligendi rem quibusdam tempore repudiandae!&nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, molestias, nam, molestiae, nihil animi voluptate quam iste adipisci repellat a facere aliquid reprehenderit corporis labore eligendi rem quibusdam tempore repudiandae!&nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, molestias, nam, molestiae, nihil animi voluptate quam iste adipisci repellat a facere aliquid reprehenderit corporis labore eligendi rem quibusdam tempore repudiandae!</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, molestias, nam, molestiae, nihil animi voluptate quam iste adipisci repellat a facere aliquid reprehenderit corporis labore eligendi rem quibusdam tempore repudiandae!&nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, molestias, nam, molestiae, nihil animi voluptate quam iste adipisci repellat a facere aliquid reprehenderit corporis labore eligendi rem quibusdam tempore repudiandae!&nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, molestias, nam, molestiae, nihil animi voluptate quam iste adipisci repellat a facere aliquid reprehenderit corporis labore eligendi rem quibusdam tempore repudiandae!</p>\r\n', '1'),
+(4, 'Sejarah', 'Administrator', '2014-08-12 09:33:46', 'Profil', '<p><span style="color:rgb(0, 0, 0); font-family:arial,helvetica,tahoma,verdana,sans-serif; font-size:12px">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas feugiat consequat diam. Maecenas metus. Vivamus diam purus, cursus a, commodo non, facilisis vitae, nulla. Aenean dictum lacinia tortor. Nunc iaculis, nibh non iaculis aliquam, orci felis euismod neque, sed ornare massa mauris sed velit. Nulla pretium mi et risus. Fusce mi pede, tempor id, cursus ac, ullamcorper nec, enim. Sed tortor. Curabitur molestie. Duis velit augue, condimentum at, ultrices a, luctus ut, orci. Donec pellentesque egestas eros. Integer cursus, augue in cursus faucibus, eros pede bibendum sem, in tempus tellus justo quis ligula. Etiam eget tortor. Vestibulum rutrum, est ut placerat elementum, lectu</span></p>\r\n', '1');
 
 -- --------------------------------------------------------
 
