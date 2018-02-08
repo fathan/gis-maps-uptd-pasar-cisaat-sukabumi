@@ -23,19 +23,19 @@ $ php -S localhost:3000
 ##
 ##
 # Home Page Preview
-![alt text](asset/images/screenshoot/uptd-home.png)
+![alt text](screenshoot/uptd-home.png)
 
 # Maps GIS Page Preview
-![alt text](asset/images/screenshoot/uptd-denah.png)
+![alt text](screenshoot/uptd-denah.png)
 
 # Price Page Preview
-![alt text](asset/images/screenshoot/uptd-harga.png)
+![alt text](screenshoot/uptd-harga.png)
 
 # Login Page Preview
-![alt text](asset/images/screenshoot/uptd-login.png)
+![alt text](screenshoot/uptd-login.png)
 
 # Admin Page Preview
-![alt text](asset/images/screenshoot/uptd-admin.png)
+![alt text](screenshoot/uptd-admin.png)
 ##
 ##
 ## Contact Me :
