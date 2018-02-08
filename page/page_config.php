@@ -3,7 +3,7 @@
 
 	$host		="localhost";
 	$user		="root";
-	$pass		="";
+	$pass		="fathan123";
 	$db 		="project_gis_pasarcisaat";
 
 	$koneksi=mysql_connect($host,$user,$pass);

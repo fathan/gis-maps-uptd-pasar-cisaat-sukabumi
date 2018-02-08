@@ -14,7 +14,7 @@
 
 <div class="account-container login stacked">
 	<div class="content clearfix">
-		<form action="+index_proses.php" method="POST">
+		<form action="admin/+index_proses.php" method="POST">
 			<h1><center class="login_text"><a href=index.php>Login Administrator</a></center></h1>		
 			<div class="login-fields">
 				<p><center>Masukan Username dan Password anda</center></p>
